@@ -3,24 +3,45 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Brand palette */
+  --color-black: #1c1c1c;
+  --color-red: #b71c1c;
+  --color-yellow: #efa300;
+  --color-green: #2e7d32;
+  --color-white: #f0f0f0;
+  --color-brown: #3d1800;
+
+  /* Grid: 12 columns @ 90px, gutter 20px, centered */
+  --grid-columns: 12;
+  --grid-column-width: 5.625rem; /* 90px */
+  --grid-gutter: 1.25rem; /* 20px */
+  --grid-max-width: calc(
+    var(--grid-columns) * var(--grid-column-width) + (var(--grid-columns) - 1) * var(--grid-gutter)
+  );
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-sans: var(--font-teko);
+  --font-display: var(--font-teko);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-brand-black: var(--color-black);
+  --color-brand-red: var(--color-red);
+  --color-brand-yellow: var(--color-yellow);
+  --color-brand-green: var(--color-green);
+  --color-brand-white: var(--color-white);
+  --color-brand-brown: var(--color-brown);
+
+  --spacing-gutter: var(--grid-gutter);
+  --container-grid: var(--grid-max-width);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-black) url("/images/pattern.jpg") repeat-x;
+  background-size: 100% auto;
+  color: var(--color-white);
+  font-family: var(--font-teko), sans-serif;
+  overflow-x: hidden;
 }
