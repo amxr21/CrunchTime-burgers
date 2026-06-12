@@ -14,7 +14,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full py-4">
+    <header className="sticky top-0 z-9999 -mx-4 w-screen bg-linear-to-b from-brand-black/80 via-brand-black/50 to-transparent py-4 backdrop-blur-md sm:-mx-8 lg:-mx-28 lg:px-28">
       <Container className="w-full items-center flex flex-col gap-2">
         <div className="w-full flex justify-between items-center pb-2 border-b border-brand-white/10 ">
           <Link href="/" className=" flex items-center ">
@@ -28,8 +28,8 @@ export default function Header() {
             />
           </Link>
           <div className="flex items-center gap-2 sm:gap-4">
-            <Button href="/menu" className="hidden sm:inline-flex">
-              Order Now
+            <Button href="/find-us" className="hidden sm:inline-flex">
+              Reach Us
             </Button>
 
             <Button href="/cart" aria-label="View order">
@@ -83,8 +83,8 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <Button href="/menu" className="mt-3 w-full justify-center">
-              Order Now
+            <Button href="/find-us" className="mt-3 w-full justify-center">
+              Reach Us
             </Button>
           </nav>
         )}
