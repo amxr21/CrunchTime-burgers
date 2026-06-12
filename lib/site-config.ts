@@ -19,15 +19,15 @@ export const navLinks: NavLink[] = [
 export const footerLinks = {
   links: [
     { label: "Order Now", href: "/menu" },
-    { label: "Careers", href: "#" },
-    { label: "News", href: "#" },
+    { label: "Careers", href: "/careers" },
+    { label: "News", href: "/news" },
     { label: "Branches", href: "/find-us" },
   ],
   privacy: [
-    { label: "Customer's Data", href: "#" },
-    { label: "Terms & Conditions", href: "#" },
-    { label: "Privacy Policy", href: "#" },
-    { label: "Info", href: "#" },
+    { label: "Customer's Data", href: "/customer-data" },
+    { label: "Terms & Conditions", href: "/terms" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Info", href: "/info" },
   ],
 };
 
