@@ -15,7 +15,7 @@ export default function About() {
 
       <Reveal className="grid grid-cols-1 gap-2 sm:grid-cols-4 sm:gap-0" delay={0.15}>
         {aboutImages.map((image, index) => (
-          <div key={image} className="relative aspect-square overflow-hidden sm:aspect-6/3">
+          <div key={image} className="relative aspect-video overflow-hidden sm:aspect-6/3">
             <Image
               src={image}
               alt={`Crunchtime kitchen and team photo ${index + 1}`}

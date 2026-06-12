@@ -28,9 +28,9 @@ export default function Header() {
             />
           </Link>
           <div className="flex items-center gap-2 sm:gap-4">
-            <Button href="/find-us" className="hidden sm:inline-flex">
-              Reach Us
-            </Button>
+            <div className="hidden sm:block">
+              <Button href="/find-us">Reach Us</Button>
+            </div>
 
             <Button href="/cart" aria-label="View order">
               <Image src={ICONS.cartBag} alt="" width={20} height={18} />
