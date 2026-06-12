@@ -30,14 +30,14 @@ export default function Hero() {
 
       tl.fromTo(
         "[data-hero-burger]",
-        { opacity: 0, scale: 0.8, rotate: -8 },
-        { opacity: 1, scale: 1, rotate: 0, duration: 0.9 },
+        { opacity: 0, x: "60%" },
+        { opacity: 1, x: "0%", duration: 1 },
       )
         .fromTo(
           "[data-hero-heading-line]",
-          { opacity: 0, y: 40 },
-          { opacity: 1, y: 0, duration: 0.7, stagger: 0.12 },
-          "-=0.5",
+          { opacity: 0, x: "-60%" },
+          { opacity: 1, x: "0%", duration: 1, stagger: 0.12 },
+          "<",
         )
         .fromTo(
           "[data-hero-badge]",
@@ -93,7 +93,7 @@ export default function Hero() {
 
       <Container className="flex w-full flex-row items-center sm:w-fit sm:items-center">
 
-        <div className="relative flex w-1/2 max-w-xs shrink-0 sm:w-fit sm:h-180 sm:max-w-none">
+        <div className="relative flex w-1/2 max-w-xs shrink-0 sm:w-fit sm:h-180 sm:max-w-none -mr-10">
           <Image
             data-hero-burger
             src={IMAGES.heroBurger}
