@@ -11,7 +11,7 @@ export default function BuildYourMeal() {
         Create Your Perfect Meal, Yourself!!
       </SectionHeading>
 
-      <Reveal className="col-span-12 grid grid-cols-2 gap-gutter sm:grid-cols-4" delay={0.15} stagger>
+      <Reveal className="col-span-12 grid grid-cols-1 gap-gutter sm:grid-cols-4" delay={0.15} stagger>
         {builtMeals.map((meal, index) => (
           <MealCard
             key={`${meal.name}-${index}`}

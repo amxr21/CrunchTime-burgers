@@ -40,7 +40,7 @@ export default function MenuSectionBlock({ section }: { section: MenuSection }) 
         </span>
       </SectionHeading>
 
-      <Reveal className="col-span-12 grid grid-cols-2 gap-gutter sm:grid-cols-4" delay={0.15}>
+      <Reveal className="col-span-12 grid grid-cols-1 gap-gutter sm:grid-cols-4" delay={0.15}>
         {section.items.map((item, index) => (
           <MealCard
             key={`${item.name}-${index}`}

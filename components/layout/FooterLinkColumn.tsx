@@ -7,7 +7,7 @@ type FooterLinkColumnProps = {
 
 export default function FooterLinkColumn({ title, links }: FooterLinkColumnProps) {
   return (
-    <div className="w-40">
+    <div className="w-24 sm:w-40">
       <h3 className="font-display text-4xl uppercase tracking-wide">{title}</h3>
       <ul className="mt-4 space-y-2">
         {links.map((link) => (

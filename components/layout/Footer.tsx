@@ -8,14 +8,13 @@ import {
 } from "@/lib/site-config";
 import Container from "@/components/layout/Container";
 import FooterLinkColumn from "@/components/layout/FooterLinkColumn";
-import Reveal from "@/components/ui/Reveal";
 import { ICONS } from "@/lib/assets";
 
 export default function Footer() {
   return (
-    <footer className="relative left-1/2 right-1/2 mx-[-50vw] w-screen border-t border-brand-white/10 bg-linear-to-t from-black to-transparent text-brand-white">
+    <footer className="-mx-4 border-t border-brand-white/10 bg-linear-to-t from-black to-transparent text-brand-white sm:-mx-8 lg:-mx-28">
       <Container className="px-6 py-12 sm:px-12 lg:px-28 lg:py-16">
-        <Reveal className="flex flex-col flex-wrap items-start justify-between gap-y-10 sm:flex-row" stagger>
+        <div className="flex flex-col flex-wrap items-start justify-between gap-y-10 sm:flex-row">
           <div className="w-full max-w-xs">
             <Image
               src={ICONS.logo}
@@ -29,7 +28,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex gap-16">
+          <div className="flex gap-6 sm:gap-16">
             <FooterLinkColumn title="Links" links={footerLinks.links} />
             <FooterLinkColumn title="Privacy" links={footerLinks.privacy} />
           </div>
@@ -58,7 +57,7 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-        </Reveal>
+        </div>
       </Container>
 
       <div className="border-t border-brand-white/10 px-6 py-4 sm:px-12 lg:px-28">

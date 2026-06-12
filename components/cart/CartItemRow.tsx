@@ -56,9 +56,9 @@ export default function CartItemRow({ item }: CartItemRowProps) {
   return (
     <div
       ref={rowRef}
-      className="flex flex-wrap items-center gap-3 border-b border-brand-white/10 py-4 last:border-b-0 sm:flex-nowrap sm:gap-4"
+      className="flex flex-col gap-3 border-b border-brand-white/10 py-4 last:border-b-0 sm:flex-row sm:items-center sm:gap-4"
     >
-      <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-brand-white/5 sm:h-20 sm:w-20">
+      <div className="relative h-40 w-full shrink-0 overflow-hidden rounded-xl bg-brand-white/5 sm:h-20 sm:w-20">
         <Image src={item.image} alt={item.name} fill className="object-contain p-2" />
       </div>
 
@@ -67,7 +67,7 @@ export default function CartItemRow({ item }: CartItemRowProps) {
         <p className="text-base text-brand-white/70 sm:text-lg">${item.price.toFixed(2)} each</p>
       </div>
 
-      <div className="order-3 flex w-full items-center justify-between gap-3 sm:order-0 sm:w-auto sm:justify-start">
+      <div className="flex w-full items-center justify-between gap-3 sm:w-auto sm:justify-start">
         <div className="flex items-center gap-3">
           <button
             type="button"
