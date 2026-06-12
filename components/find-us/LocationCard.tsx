@@ -32,7 +32,7 @@ export default function LocationCard({ street, city, address, phone }: LocationI
         <h3 className="-mt-1 font-display text-4xl uppercase tracking-wide sm:text-5xl lg:text-6xl">{city}</h3>
         <p className="-mt-1 text-lg uppercase tracking-wide text-brand-white/70">{address}</p>
 
-        <Button href="/menu" className="mt-2 flex-1" aria-label={`Order now from ${city}`}>
+        <Button href="/menu" className="mt-2 w-full justify-center sm:mt-auto" aria-label={`Order now from ${city}`}>
           Order Now
         </Button>
       </div>

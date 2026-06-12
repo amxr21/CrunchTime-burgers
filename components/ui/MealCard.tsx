@@ -67,7 +67,7 @@ export default function MealCard({
 
   const content = (
     <div className="group relative flex flex-col overflow-hidden rounded-2xl bg-brand-black p-2 transition-transform duration-500 ease-out will-change-transform hover:-translate-y-1 sm:p-3">
-      <div className="relative bg-brand-white/5 h-full rounded-2xl p-3 overflow-hidden sm:p-6">
+      <div className="relative flex h-full flex-col bg-brand-white/5 rounded-2xl p-3 overflow-hidden sm:p-6">
         <div
           className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-10"
           style={{ backgroundImage: `url(${IMAGES.elementPatterns[accent]})` }}
@@ -113,9 +113,9 @@ export default function MealCard({
           <PriceTag price={price} />
         </div>
         <div className="relative mt-2 flex items-start justify-between gap-2 sm:mt-4">
-          <h3 className="font-display text-2xl uppercase leading-7 tracking-wide w-4/5 sm:text-4xl sm:leading-8">{name}</h3>
+          <h3 className="font-display text-xl uppercase leading-6 tracking-wide w-full sm:w-4/5 sm:text-4xl sm:leading-8">{name}</h3>
         </div>
-        <p className="mt-1 text-base uppercase leading-5 tracking-wide text-brand-white/70 sm:mt-2 sm:text-lg">{description}</p>
+        <p className="mt-1 flex-1 text-base uppercase leading-5 tracking-wide text-brand-white/70 sm:mt-2 sm:text-lg">{description}</p>
 
         {onAddToCart && (
           <button
@@ -125,7 +125,7 @@ export default function MealCard({
               e.stopPropagation();
               onAddToCart();
             }}
-            className="relative mt-3 w-full rounded-md bg-brand-red py-2 font-display text-lg uppercase tracking-wide transition-colors duration-300 ease-out hover:bg-brand-yellow hover:text-brand-black sm:text-xl"
+            className="relative mt-3 w-full rounded-md bg-brand-red py-2 font-display text-lg uppercase tracking-wide transition-all duration-200 ease-out hover:bg-brand-yellow hover:text-brand-black active:scale-95 active:bg-brand-black active:text-brand-red sm:text-xl"
           >
             Add to Order
           </button>
