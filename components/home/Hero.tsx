@@ -93,7 +93,7 @@ export default function Hero() {
 
       <Container className="flex w-full flex-row items-center sm:w-fit sm:items-center">
 
-        <div className="relative flex w-1/2 max-w-xs shrink-0 sm:w-fit sm:h-180 sm:max-w-none -mr-10">
+        <div className="sm:m-0 relative flex w-7/12 max-w-xs shrink-0 sm:w-fit sm:h-180 sm:max-w-none -mr-10">
           <Image
             data-hero-burger
             src={IMAGES.heroBurger}
@@ -105,8 +105,8 @@ export default function Hero() {
         </div>
 
 
-        <div className="relative w-1/2 sm:w-80">
-          <h1 className="font-display text-5xl font-bold uppercase leading-none overflow-hidden text-left sm:text-left sm:text-[10.5rem] sm:leading-32">
+        <div className="relative w-1/2 sm:w-80 sm:m-0 mt-8">
+          <h1 className="font-display text-6xl font-bold uppercase leading-none overflow-hidden text-left sm:text-left sm:text-[10.5rem] sm:leading-32">
             <span data-hero-heading-line className="block">Every Bite.</span>
             <span data-hero-heading-line className="block">Every Time</span>
           </h1>
