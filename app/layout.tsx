@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ScrollRestoration from "@/components/layout/ScrollRestoration";
+import PageTransition from "@/components/layout/PageTransition";
 import { siteConfig } from "@/lib/site-config";
 import { CartProvider } from "@/lib/cart/CartContext";
 import { ToastProvider } from "@/lib/toast/ToastContext";
@@ -33,6 +34,7 @@ export default function RootLayout({
     <html lang="en" className={`${teko.variable} h-full antialiased`} suppressHydrationWarning>
       <body className="flex min-h-full flex-col px-4 sm:px-8 lg:px-28 " suppressHydrationWarning>
         <ScrollRestoration />
+        <PageTransition />
         <CartProvider>
           <ToastProvider>
             <Header />
