@@ -14,7 +14,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-4 z-9999 mx-auto w-full rounded-lg border border-brand-white/10 bg-brand-black/70 px-4 py-4 shadow-lg backdrop-blur-md sm:px-6">
+    <header className="fixed inset-x-4 top-4 z-9999 rounded-lg border border-brand-white/10 bg-brand-black/70 px-4 py-4 shadow-lg backdrop-blur-md sm:inset-x-8 sm:px-6 lg:inset-x-28">
       <Container className="w-full items-center flex flex-col gap-2">
         <div className="w-full flex justify-between items-center pb-2 border-b border-brand-white/10 ">
           <Link href="/" className=" flex items-center ">
@@ -83,9 +83,6 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <Button href="/find-us" className="mt-3 w-full justify-center">
-              Reach Us
-            </Button>
           </nav>
         )}
       </Container>

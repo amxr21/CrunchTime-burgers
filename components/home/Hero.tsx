@@ -106,17 +106,17 @@ export default function Hero() {
 
 
         <div className="relative w-1/2 sm:w-80">
-          <h1 className="font-display text-5xl font-bold uppercase leading-tight overflow-hidden text-left sm:text-left sm:text-[10.5rem] sm:leading-32">
+          <h1 className="font-display text-5xl font-bold uppercase leading-none overflow-hidden text-left sm:text-left sm:text-[10.5rem] sm:leading-32">
             <span data-hero-heading-line className="block">Every Bite.</span>
             <span data-hero-heading-line className="block">Every Time</span>
           </h1>
 
-          <span data-hero-badge className="mt-4 flex w-fit items-center gap-2 bg-brand-red px-3 py-1 font-display text-lg uppercase tracking-wide sm:absolute sm:top-[42%] sm:left-10 sm:mt-0 sm:px-4 sm:py-0 sm:text-3xl sm:leading-12">
+          <span data-hero-badge className="mt-4 flex w-fit items-center gap-1.5 bg-brand-red px-2 py-1 font-display text-sm uppercase tracking-wide sm:absolute sm:top-[42%] sm:left-10 sm:mt-0 sm:gap-2 sm:px-4 sm:py-0 sm:text-3xl sm:leading-12">
             <svg
               aria-hidden="true"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className="h-5 w-5 shrink-0 sm:h-8 sm:w-8"
+              className="h-4 w-4 shrink-0 sm:h-8 sm:w-8"
             >
               <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" />
             </svg>
@@ -127,10 +127,10 @@ export default function Hero() {
 
       <div data-hero-bar className="border-t z-50 bg-brand-black/70 mt-8 w-full border-brand-white/10 sm:-mt-36">
         <Container className="flex flex-col justify-between gap-y-2 py-4 z-50 sm:flex-row sm:items-center">
-          <p className="text-left text-xl uppercase font-light tracking-wide text-brand-white sm:text-2xl">
+          <p className="text-left text-base uppercase font-light tracking-wide text-brand-white sm:text-2xl">
             Find an offer in: Business Park Drive, Suite 420 Atlanta, GA
           </p>
-          <p className="text-left font-display text-xl font-light tracking-wide sm:text-right sm:text-2xl">
+          <p className="text-left font-display text-base font-light tracking-wide sm:text-right sm:text-2xl">
             (404) 555-CRUNCH (27862)
           </p>
         </Container>

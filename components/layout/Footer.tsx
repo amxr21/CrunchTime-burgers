@@ -23,7 +23,7 @@ export default function Footer() {
               height={29}
               className="h-auto w-40"
             />
-            <p className="mt-4 max-w-xs text-2xl text-brand-white/70">
+            <p className="mt-4 max-w-xs text-base text-brand-white/70 sm:text-xl">
               {siteConfig.tagline}
             </p>
           </div>
@@ -34,22 +34,22 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-display text-4xl uppercase tracking-wide">Enlighten Us!</h3>
+            <h3 className="font-display text-xl uppercase tracking-wide sm:text-3xl">Enlighten Us!</h3>
             <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
               {cityLocations.map((city) => (
-                <li key={city} className="text-2xl text-brand-white/70">
+                <li key={city} className="text-base text-brand-white/70 sm:text-xl">
                   {city}
                 </li>
               ))}
             </ul>
 
-            <h3 className="mt-8 font-display text-4xl uppercase tracking-wide">Say Hi!!</h3>
+            <h3 className="mt-8 font-display text-xl uppercase tracking-wide sm:text-3xl">Say Hi!!</h3>
             <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
               {socialLinks.map((social) => (
                 <li key={social.label}>
                   <Link
                     href={social.href}
-                    className="text-2xl text-brand-white/70 transition-colors duration-300 ease-out hover:text-brand-yellow"
+                    className="text-base text-brand-white/70 transition-colors duration-300 ease-out hover:text-brand-yellow sm:text-xl"
                   >
                     {social.label}
                   </Link>
@@ -61,7 +61,7 @@ export default function Footer() {
       </Container>
 
       <div className="border-t border-brand-white/10 px-6 py-4 sm:px-12 lg:px-28">
-        <p className="text-center text-sm uppercase tracking-wide text-brand-white/50">
+        <p className="text-center text-xs uppercase tracking-wide text-brand-white/50">
           {siteConfig.name} is a registered brandmark, all rights reserved
         </p>
       </div>

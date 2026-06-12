@@ -18,24 +18,24 @@ export default function WhyCrunchtime() {
 
       <SectionHeading>Why Crunchtime</SectionHeading>
 
-      <Reveal className="col-span-12 grid grid-cols-2 gap-gutter sm:grid-cols-4" delay={0.15} stagger>
+      <Reveal className="col-span-12 grid grid-cols-1 gap-gutter sm:grid-cols-4" delay={0.15} stagger>
         {whyFeatures.map((feature) => (
           <div
             key={feature.title}
-            className="group flex flex-col gap-5 items-center py-8 text-center"
+            className="group flex flex-col gap-3 items-center py-4 text-center sm:gap-5 sm:py-8"
           >
             <Image
               src={feature.icon}
               alt=""
               width={48}
               height={48}
-              className="w-15 h-15 transition-transform duration-500 ease-out group-hover:scale-110"
+              className="w-12 h-12 transition-transform duration-500 ease-out group-hover:scale-110 sm:w-15 sm:h-15"
             />
             <div className="text">
-              <h3 className="font-display text-4xl uppercase tracking-wide">
+              <h3 className="font-display text-2xl uppercase tracking-wide sm:text-4xl">
                 {feature.title}
               </h3>
-              <p className="text-xl text-brand-white/70 -mt-1">{feature.description}</p>
+              <p className="text-base text-brand-white/70 -mt-1 sm:text-xl">{feature.description}</p>
 
             </div>
           </div>

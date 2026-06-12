@@ -22,7 +22,7 @@ export default function Categories() {
           <Link
             key={category.title}
             href={category.href}
-            className="group relative flex aspect-3/4 flex-col justify-end overflow-hidden h-112 w-full transition-transform duration-500 ease-out will-change-transform hover:-translate-y-2 sm:h-144 lg:h-176"
+            className="group relative flex aspect-3/4 flex-col justify-end overflow-hidden h-72 w-full transition-transform duration-500 ease-out will-change-transform hover:-translate-y-2 sm:h-144 lg:h-176"
           >
             <Image
               src={category.image}
@@ -36,10 +36,10 @@ export default function Categories() {
             />
             <div className="pointer-events-none absolute inset-0 bg-black/40 transition-colors duration-500 ease-out group-hover:bg-black/60" />
             <div className="relative z-10 p-4">
-              <h3 className="font-display text-6xl font-normal uppercase leading-12">
+              <h3 className="font-display text-4xl font-normal uppercase leading-9 sm:text-6xl sm:leading-12">
                 {category.title}
               </h3>
-              <p className="mt-1 text-2xl text-justify font-thin uppercase leading-7 tracking-wide">
+              <p className="mt-1 text-lg font-thin uppercase leading-6 tracking-wide sm:text-2xl sm:text-justify sm:leading-7">
                 {category.description}
               </p>
             </div>

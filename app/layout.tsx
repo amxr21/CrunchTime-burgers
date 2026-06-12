@@ -38,7 +38,7 @@ export default function RootLayout({
         <CartProvider>
           <ToastProvider>
             <Header />
-            <main className="flex flex-1 flex-col">{children}</main>
+            <main className="flex flex-1 flex-col pt-24 sm:pt-32">{children}</main>
             <Footer />
           </ToastProvider>
         </CartProvider>
