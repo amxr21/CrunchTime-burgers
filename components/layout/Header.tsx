@@ -14,7 +14,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-9999 -mx-4 w-screen bg-linear-to-b from-brand-black/80 via-brand-black/50 to-transparent py-4 backdrop-blur-md sm:-mx-8 lg:-mx-28 lg:px-28">
+    <header className="sticky top-4 z-9999 mx-auto w-full rounded-lg border border-brand-white/10 bg-brand-black/70 px-4 py-4 shadow-lg backdrop-blur-md sm:px-6">
       <Container className="w-full items-center flex flex-col gap-2">
         <div className="w-full flex justify-between items-center pb-2 border-b border-brand-white/10 ">
           <Link href="/" className=" flex items-center ">

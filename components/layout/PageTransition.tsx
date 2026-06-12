@@ -61,7 +61,7 @@ export default function PageTransition() {
     <div
       ref={overlayRef}
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 z-9999 flex flex-col items-center justify-center gap-6 overflow-hidden bg-brand-black/60 backdrop-blur-sm"
+      className="pointer-events-none fixed inset-0 z-10000 flex flex-col items-center justify-center gap-6 overflow-hidden bg-brand-black/60 backdrop-blur-sm"
     >
       <div className="flex items-center gap-4 sm:gap-6">
         {EMOJIS.map((src, index) => (
