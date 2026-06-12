@@ -32,8 +32,10 @@ export default function PhoneModal({ open, onClose, onSubmit, submitting }: Phon
   const dialogRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const previouslyFocused = useRef<HTMLElement | null>(null);
-  const mountedAt = useRef<number>(Date.now());
+  const mountedAt = useRef<number>(0);
 
+  const [visible, setVisible] = useState(open);
+  const [prevOpen, setPrevOpen] = useState(open);
   const [name, setName] = useState("");
   const [country, setCountry] = useState<CountryCode>("AE");
   const [phone, setPhone] = useState("");
@@ -49,9 +51,6 @@ export default function PhoneModal({ open, onClose, onSubmit, submitting }: Phon
 
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-
-    const firstInput = dialogRef.current?.querySelector<HTMLElement>("input, select, textarea, button");
-    firstInput?.focus();
 
     function handleKeyDown(e: KeyboardEvent) {
       if (e.key === "Escape") {
@@ -87,9 +86,36 @@ export default function PhoneModal({ open, onClose, onSubmit, submitting }: Phon
     };
   }, [open, onClose]);
 
+  if (open !== prevOpen) {
+    setPrevOpen(open);
+    if (open) setVisible(true);
+  }
+
+  useEffect(() => {
+    if (open || !visible) return;
+
+    if (!overlayRef.current || !dialogRef.current || prefersReducedMotion()) {
+      setVisible(false);
+      return;
+    }
+
+    const overlay = overlayRef.current;
+    const dialog = dialogRef.current;
+
+    gsap.to(dialog, { opacity: 0, y: 24, scale: 0.97, duration: DURATION.fast, ease: EASE_OUT });
+    gsap.to(overlay, {
+      opacity: 0,
+      duration: DURATION.fast,
+      onComplete: () => setVisible(false),
+    });
+  }, [open, visible]);
+
   useGSAP(
     () => {
-      if (!open || !overlayRef.current || !dialogRef.current) return;
+      if (!visible || !open || !overlayRef.current || !dialogRef.current) return;
+
+      const firstInput = dialogRef.current.querySelector<HTMLElement>("input, select, textarea, button");
+      firstInput?.focus();
 
       if (prefersReducedMotion()) {
         gsap.set(overlayRef.current, { opacity: 1 });
@@ -104,10 +130,10 @@ export default function PhoneModal({ open, onClose, onSubmit, submitting }: Phon
         { opacity: 1, y: 0, scale: 1, duration: DURATION.base, ease: EASE_OUT },
       );
     },
-    { dependencies: [open] },
+    { dependencies: [visible, open] },
   );
 
-  if (!open) return null;
+  if (!visible) return null;
 
   function handlePhoneChange(value: string) {
     const formatter = new AsYouType(country);
@@ -163,7 +189,7 @@ export default function PhoneModal({ open, onClose, onSubmit, submitting }: Phon
         role="dialog"
         aria-modal="true"
         aria-labelledby="phone-modal-title"
-        className="w-full max-w-md rounded-2xl bg-brand-black p-6 text-brand-white shadow-xl"
+        className="relative w-full max-w-md rounded-2xl bg-brand-black p-6 text-brand-white shadow-xl"
       >
         <h2 id="phone-modal-title" className="font-display text-4xl uppercase tracking-wide">
           Contact details
@@ -267,19 +293,26 @@ export default function PhoneModal({ open, onClose, onSubmit, submitting }: Phon
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 rounded-md bg-brand-white/10 py-2 font-display text-xl uppercase tracking-wide transition-colors duration-300 ease-out hover:bg-brand-white/20"
+              className="flex-1 rounded-md bg-brand-white/10 py-2 font-display text-xl uppercase tracking-wide transition-all duration-200 ease-out hover:bg-brand-white/20 active:scale-95 active:bg-brand-black"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={submitting}
-              className="flex-1 rounded-md bg-brand-red py-2 font-display text-xl uppercase tracking-wide transition-colors duration-300 ease-out hover:bg-brand-yellow hover:text-brand-black disabled:opacity-60"
+              className="flex-1 rounded-md bg-brand-red py-2 font-display text-xl uppercase tracking-wide transition-all duration-200 ease-out hover:bg-brand-yellow hover:text-brand-black active:scale-95 active:bg-brand-black active:text-brand-red disabled:opacity-60"
             >
               {submitting ? "Sending…" : "Send order"}
             </button>
           </div>
         </form>
+
+        {submitting && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 rounded-2xl bg-brand-black/90">
+            <span className="h-10 w-10 animate-spin rounded-full border-4 border-brand-white/20 border-t-brand-red" />
+            <p className="font-display text-xl uppercase tracking-wide text-brand-white">Sending order…</p>
+          </div>
+        )}
       </div>
     </div>
   );
